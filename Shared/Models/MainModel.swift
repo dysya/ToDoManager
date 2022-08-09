@@ -13,6 +13,16 @@ struct Task: Identifiable {
     var isDone: Bool = false
 }
 
-class TaskList: ObservableObject {
-    @Published var tasks: [Task] = []
+struct Project: Identifiable {
+    let id = UUID()
+    var name: String
+    var tasks: [Task] = []
+}
+
+class Storage: ObservableObject {
+    @Published var projects: [Project] = [
+        Project(name: "Inbox"),
+        Project(name: "Today"),
+        Project(name: "Someday")
+    ]
 }

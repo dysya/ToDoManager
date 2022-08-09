@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E81D4DB28A22F9E001FB6C6 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81D4DA28A22F9E001FB6C6 /* MainPage.swift */; };
 		384F039D28A1DFE000121D19 /* ToDoManager_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F039C28A1DFE000121D19 /* ToDoManager_iOSApp.swift */; };
-		384F039F28A1DFE000121D19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F039E28A1DFE000121D19 /* ContentView.swift */; };
+		384F039F28A1DFE000121D19 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F039E28A1DFE000121D19 /* TaskListView.swift */; };
 		384F03A128A1DFE200121D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 384F03A028A1DFE200121D19 /* Assets.xcassets */; };
 		384F03A428A1DFE200121D19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 384F03A328A1DFE200121D19 /* Preview Assets.xcassets */; };
 		384F03A628A1DFE200121D19 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F03A528A1DFE200121D19 /* Persistence.swift */; };
@@ -63,9 +64,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E81D4DA28A22F9E001FB6C6 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		384F039928A1DFE000121D19 /* ToDoManager-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDoManager-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		384F039C28A1DFE000121D19 /* ToDoManager_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoManager_iOSApp.swift; sourceTree = "<group>"; };
-		384F039E28A1DFE000121D19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		384F039E28A1DFE000121D19 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		384F03A028A1DFE200121D19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		384F03A328A1DFE200121D19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		384F03A528A1DFE200121D19 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -169,7 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				384F039C28A1DFE000121D19 /* ToDoManager_iOSApp.swift */,
-				384F039E28A1DFE000121D19 /* ContentView.swift */,
+				384F039E28A1DFE000121D19 /* TaskListView.swift */,
+				2E81D4DA28A22F9E001FB6C6 /* MainPage.swift */,
 				384F03A028A1DFE200121D19 /* Assets.xcassets */,
 				384F03A528A1DFE200121D19 /* Persistence.swift */,
 				384F03A728A1DFE200121D19 /* ToDoManager_iOS.xcdatamodeld */,
@@ -498,10 +501,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				384F03A628A1DFE200121D19 /* Persistence.swift in Sources */,
-				384F039F28A1DFE000121D19 /* ContentView.swift in Sources */,
+				384F039F28A1DFE000121D19 /* TaskListView.swift in Sources */,
 				384F039D28A1DFE000121D19 /* ToDoManager_iOSApp.swift in Sources */,
 				384F040028A1E05B00121D19 /* MainModel.swift in Sources */,
 				384F03A928A1DFE200121D19 /* ToDoManager_iOS.xcdatamodeld in Sources */,
+				2E81D4DB28A22F9E001FB6C6 /* MainPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,7 +636,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDoManager-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 3PQ52R8GJN;
+				DEVELOPMENT_TEAM = 54447HLW3P;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -665,7 +669,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dysya.ToDoManager-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = akifev.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -715,7 +719,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"ToDoManager-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 3PQ52R8GJN;
+				DEVELOPMENT_TEAM = 54447HLW3P;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -741,7 +745,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dysya.ToDoManager-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = akifev.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1073,7 +1077,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDoManager-MacOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 3PQ52R8GJN;
+				DEVELOPMENT_TEAM = 54447HLW3P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1104,7 +1108,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dysya.ToDoManager-MacOS";
+				PRODUCT_BUNDLE_IDENTIFIER = akifev.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
@@ -1157,7 +1161,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"ToDoManager-MacOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 3PQ52R8GJN;
+				DEVELOPMENT_TEAM = 54447HLW3P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;
@@ -1181,7 +1185,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dysya.ToDoManager-MacOS";
+				PRODUCT_BUNDLE_IDENTIFIER = akifev.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;

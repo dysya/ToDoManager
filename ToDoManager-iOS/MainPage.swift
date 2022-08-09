@@ -1,33 +1,32 @@
 //
-//  ContentView.swift
+//  MainPage.swift
 //  ToDoManager-iOS
 //
-//  Created by dan4 on 09.08.2022.
+//  Created by Daniil Akifev on 09.08.2022.
 //
 
 import SwiftUI
-import CoreData
 
-struct ContentView: View {
-    @StateObject var taskList = TaskList()
+struct MainPage: View {
+    @StateObject var storage = Storage()
     
     var body: some View {
         NavigationView {
             ZStack {
                 List {
-                    ForEach (taskList.tasks) { task in
-                        Text(task.description)
+                    ForEach ($storage.projects) { $project in
+                        NavigationLink("\(project.name)", destination: TaskListView(project: $project))
                     }
-                    .onDelete(perform: removeItems)
+                    .onDelete(perform: deleteProject)
                 }
-                .navigationTitle("Task List")
+                .navigationTitle("Projects")
                 VStack {
                     Spacer()
                     HStack {
                         Spacer()
                         Button(
                             action: {
-                                taskList.tasks.append(Task(description: "New Task"))
+                                storage.projects.append(Project(name: "New Project"))
                             },
                             label: {
                                 Text("+")
@@ -48,20 +47,16 @@ struct ContentView: View {
                     }
                 }
             }
-        }.onAppear {
-            taskList.tasks.append(Task(description: "Task #1"))
-            taskList.tasks.append(Task(description: "Task #2"))
-            taskList.tasks.append(Task(description: "Task #3"))
         }
     }
     
-    private func removeItems(at offset: IndexSet) {
-        taskList.tasks.remove(atOffsets: offset)
+    private func deleteProject(at offset: IndexSet) {
+        storage.projects.remove(atOffsets: offset)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainPage_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().previewInterfaceOrientation(.portrait)
+        MainPage().previewInterfaceOrientation(.portrait)
     }
 }

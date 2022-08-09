@@ -13,7 +13,7 @@ struct ToDoManager_iOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainPage()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
