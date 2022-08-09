@@ -19,10 +19,21 @@ struct Project: Identifiable {
     var tasks: [Task] = []
 }
 
-class Storage: ObservableObject {
+final class Storage: ObservableObject {
     @Published var projects: [Project] = [
         Project(name: "Inbox"),
         Project(name: "Today"),
         Project(name: "Someday")
     ]
+    @Published var newProject = ""
+    
+    func createNewProject() {
+        projects.append(Project(name: newProject))
+        newProject = ""
+    }
+    
+    func deleteProject(at offset: IndexSet) {
+        projects.remove(atOffsets: offset)
+    }
+
 }
