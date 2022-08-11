@@ -11,6 +11,26 @@ import CoreData
 struct TaskListView: View {
     @Binding var project: Project
     
+    fileprivate func newTaskButton() -> some View {
+        return Button(
+            action: {
+                project.tasks.append(Task(description: "New Task"))
+            },
+            label: {
+                Image(systemName: "plus")
+                    .foregroundColor(.white)
+            }
+        )
+        .frame(width: 40, height: 40)
+        .background(Color.blue)
+        .cornerRadius(38.5)
+        .shadow(color: Color.black.opacity(0.3),
+                radius: 3,
+                x: 3,
+                y: 3
+        )
+    }
+    
     var body: some View {
         ZStack {
             List {
@@ -24,27 +44,8 @@ struct TaskListView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Button(
-                        action: {
-                            project.tasks.append(Task(description: "New Task"))
-                        },
-                        label: {
-                            Text("+")
-                            .font(.system(.largeTitle))
-                            .frame(width: 57, height: 50)
-                            .foregroundColor(Color.white)
-                            .padding(.bottom, 7)
-                        }
-                    )
-                    .background(Color.blue)
-                    .cornerRadius(38.5)
-                    .padding()
-                    .shadow(color: Color.black.opacity(0.3),
-                        radius: 3,
-                        x: 3,
-                        y: 3
-                    )
-                }
+                    newTaskButton()
+                }.padding()
             }
         }
     }
