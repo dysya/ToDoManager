@@ -28,8 +28,8 @@ struct MainPage: View {
                     .foregroundColor(Color.white)
             }
         )
-        .frame(width: isNewProjectCellShown ? 100 : 40, height: 40)
-        .background(isNewProjectCellShown ? Color.green : Color.blue)
+        .frame(width: 100, height: 40)
+        .background(Color.green)
         .cornerRadius(38.5)
         .shadow(color: Color.black.opacity(0.3),
                 radius: 3,
