@@ -602,6 +602,7 @@
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				SWIFT_VERSION = "";
 			};
 			name = Debug;
 		};
@@ -610,6 +611,7 @@
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				SWIFT_VERSION = "";
 			};
 			name = Release;
 		};
