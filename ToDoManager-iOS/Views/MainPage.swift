@@ -108,7 +108,7 @@ struct MainPage: View {
                     ForEach ($storage.projects) { $project in
                         NavigationLink("\(project.name)", destination: TaskListView(project: $project))
                     }
-                    .onDelete(perform: storage.deleteProject)
+                    .onDelete(perform: deleteProject)
                     if showingAlert {
                         addNewProjectView()
                     }
@@ -130,6 +130,9 @@ struct MainPage: View {
         }
     }
     
+    private func deleteProject(at offset: IndexSet) {
+        storage.projects.remove(atOffsets: offset)
+    }
 }
 
 struct MainPage_Previews: PreviewProvider {

@@ -25,8 +25,4 @@ final class Storage: ObservableObject {
         Project(name: "Today"),
         Project(name: "Someday")
     ]
-    
-    func deleteProject(at offset: IndexSet) {
-        projects.remove(atOffsets: offset)
-    }
 }
