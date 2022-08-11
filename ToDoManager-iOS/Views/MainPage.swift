@@ -10,7 +10,7 @@ import SwiftUI
 struct MainPage: View {
     @StateObject private var storage = Storage()
     @State var newProjectName = ""
-    @State private var showingAlert = false
+    @State private var isNewProjectCellShown = false
     @FocusState private var isFocusedNewProjectTextField: Bool
     
     fileprivate func doneButton() -> some View {
@@ -20,7 +20,7 @@ struct MainPage: View {
                     storage.projects.append(Project(name: newProjectName))
                     newProjectName = ""
                 }
-                showingAlert = !showingAlert
+                isNewProjectCellShown = !isNewProjectCellShown
             },
             label: {
                 Text("Done")
@@ -28,8 +28,8 @@ struct MainPage: View {
                     .foregroundColor(Color.white)
             }
         )
-        .frame(width: showingAlert ? 100 : 40, height: 40)
-        .background(showingAlert ? Color.green : Color.blue)
+        .frame(width: isNewProjectCellShown ? 100 : 40, height: 40)
+        .background(isNewProjectCellShown ? Color.green : Color.blue)
         .cornerRadius(38.5)
         .shadow(color: Color.black.opacity(0.3),
                 radius: 3,
@@ -42,7 +42,7 @@ struct MainPage: View {
         return Button(
             action: {
                 newProjectName = ""
-                showingAlert = !showingAlert
+                isNewProjectCellShown = !isNewProjectCellShown
             },
             label: {
                 Text("Cancel")
@@ -63,7 +63,7 @@ struct MainPage: View {
     fileprivate func newProjectButton() -> some View {
         return Button(
             action: {
-                showingAlert = !showingAlert
+                isNewProjectCellShown = !isNewProjectCellShown
             },
             label: {
                 Image(systemName: "plus")
@@ -95,7 +95,7 @@ struct MainPage: View {
                             storage.projects.append(Project(name: newProjectName))
                             newProjectName = ""
                         }
-                        showingAlert = !showingAlert
+                        isNewProjectCellShown = !isNewProjectCellShown
                     }
             }
         }
@@ -109,7 +109,7 @@ struct MainPage: View {
                         NavigationLink("\(project.name)", destination: TaskListView(project: $project))
                     }
                     .onDelete(perform: deleteProject)
-                    if showingAlert {
+                    if isNewProjectCellShown {
                         addNewProjectView()
                     }
                 }
@@ -118,7 +118,7 @@ struct MainPage: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        if !showingAlert {
+                        if !isNewProjectCellShown {
                             newProjectButton()
                         } else {
                             doneButton()
