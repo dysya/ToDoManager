@@ -77,7 +77,7 @@ struct MainPage: View {
         )
     }
     
-    fileprivate func addNewProjectView() -> VStack<HStack<some View>> {
+    fileprivate func addNewProjectView() -> some View {
         return VStack {
             HStack {
                 TextField("Enter name", text: $storage.newProject)
