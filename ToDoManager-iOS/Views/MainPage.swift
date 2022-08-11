@@ -121,7 +121,9 @@ struct MainPage: View {
                         if !isNewProjectCellShown {
                             newProjectButton()
                         } else {
-                            doneButton()
+                            if (!newProjectName.isEmpty) {
+                                doneButton()
+                            }
                             cancelButton()
                         }
                     }.padding()
