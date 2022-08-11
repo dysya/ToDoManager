@@ -140,6 +140,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3838A68128A26C3200BDC8FB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				384F039C28A1DFE000121D19 /* ToDoManager_iOSApp.swift */,
+				384F03A528A1DFE200121D19 /* Persistence.swift */,
+				384F03A028A1DFE200121D19 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3838A68228A26C6100BDC8FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2E81D4DA28A22F9E001FB6C6 /* MainPage.swift */,
+				384F039E28A1DFE000121D19 /* TaskListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		384F038E28A1DF5300121D19 = {
 			isa = PBXGroup;
 			children = (
@@ -170,11 +189,8 @@
 		384F039B28A1DFE000121D19 /* ToDoManager-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				384F039C28A1DFE000121D19 /* ToDoManager_iOSApp.swift */,
-				384F039E28A1DFE000121D19 /* TaskListView.swift */,
-				2E81D4DA28A22F9E001FB6C6 /* MainPage.swift */,
-				384F03A028A1DFE200121D19 /* Assets.xcassets */,
-				384F03A528A1DFE200121D19 /* Persistence.swift */,
+				3838A68228A26C6100BDC8FB /* Views */,
+				3838A68128A26C3200BDC8FB /* Resources */,
 				384F03A728A1DFE200121D19 /* ToDoManager_iOS.xcdatamodeld */,
 				384F03A228A1DFE200121D19 /* Preview Content */,
 			);
