@@ -9,14 +9,16 @@ import SwiftUI
 
 struct MainPage: View {
     @StateObject private var storage = Storage()
+    @State var newProjectName = ""
     @State private var showingAlert = false
     @FocusState private var isFocusedNewProjectTextField: Bool
     
     fileprivate func doneButton() -> some View {
         return Button(
             action: {
-                if showingAlert {
-                    storage.createNewProject()
+                if (!newProjectName.isEmpty) {
+                    storage.projects.append(Project(name: newProjectName))
+                    newProjectName = ""
                 }
                 showingAlert = !showingAlert
             },
@@ -39,6 +41,7 @@ struct MainPage: View {
     fileprivate func cancelButton() -> some View {
         return Button(
             action: {
+                newProjectName = ""
                 showingAlert = !showingAlert
             },
             label: {
@@ -80,7 +83,7 @@ struct MainPage: View {
     fileprivate func addNewProjectView() -> some View {
         return VStack {
             HStack {
-                TextField("Enter name", text: $storage.newProject)
+                TextField("Enter name", text: $newProjectName)
                     .focused($isFocusedNewProjectTextField)
                     .onAppear {
                         DispatchQueue.main.async {
@@ -88,8 +91,9 @@ struct MainPage: View {
                         }
                     }
                     .onSubmit {
-                        if showingAlert {
-                            storage.createNewProject()
+                        if (!newProjectName.isEmpty) {
+                            storage.projects.append(Project(name: newProjectName))
+                            newProjectName = ""
                         }
                         showingAlert = !showingAlert
                     }

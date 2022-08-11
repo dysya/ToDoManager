@@ -25,15 +25,8 @@ final class Storage: ObservableObject {
         Project(name: "Today"),
         Project(name: "Someday")
     ]
-    @Published var newProject = ""
-    
-    func createNewProject() {
-        projects.append(Project(name: newProject))
-        newProject = ""
-    }
     
     func deleteProject(at offset: IndexSet) {
         projects.remove(atOffsets: offset)
     }
-
 }
