@@ -30,6 +30,7 @@
 		384F040328A1E26400121D19 /* PreviewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 384F040228A1E26400121D19 /* PreviewAssets.xcassets */; };
 		384F040428A1E26400121D19 /* PreviewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 384F040228A1E26400121D19 /* PreviewAssets.xcassets */; };
 		384F040528A1E2F600121D19 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F03FF28A1E05B00121D19 /* MainModel.swift */; };
+		38D2A91028A77B9B00F8BF61 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D2A90F28A77B9B00F8BF61 /* MainController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		384F03F228A1E01300121D19 /* ToDoManager_MacOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoManager_MacOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		384F03FF28A1E05B00121D19 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		384F040228A1E26400121D19 /* PreviewAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PreviewAssets.xcassets; sourceTree = "<group>"; };
+		38D2A90F28A77B9B00F8BF61 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,9 +266,10 @@
 		384F03FD28A1E02800121D19 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				384F040628A1E31B00121D19 /* Views */,
 				384F040128A1E21F00121D19 /* PreviewContent */,
 				384F03FE28A1E05000121D19 /* Models */,
+				384F040628A1E31B00121D19 /* Views */,
+				38D2A90E28A77B8700F8BF61 /* Controllers */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -292,6 +295,14 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		38D2A90E28A77B8700F8BF61 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				38D2A90F28A77B9B00F8BF61 /* MainController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -517,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				384F03A628A1DFE200121D19 /* Persistence.swift in Sources */,
+				38D2A91028A77B9B00F8BF61 /* MainController.swift in Sources */,
 				384F039F28A1DFE000121D19 /* TaskListView.swift in Sources */,
 				384F039D28A1DFE000121D19 /* ToDoManager_iOSApp.swift in Sources */,
 				384F040028A1E05B00121D19 /* MainModel.swift in Sources */,
