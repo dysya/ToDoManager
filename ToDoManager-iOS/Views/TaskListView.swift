@@ -45,7 +45,8 @@ struct TaskListView: View {
                 HStack {
                     Spacer()
                     newTaskButton()
-                }.padding()
+                }
+                .padding()
             }
         }
     }

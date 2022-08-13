@@ -13,36 +13,12 @@ struct MainPage: View {
     @State private var isNewProjectCellShown = false
     @FocusState private var isFocusedNewProjectTextField: Bool
     
-    fileprivate func doneButton() -> some View {
-        return Button(
-            action: {
-                if (!newProjectName.isEmpty) {
-                    storage.projects.append(Project(name: newProjectName))
-                    newProjectName = ""
-                }
-                isNewProjectCellShown = !isNewProjectCellShown
-            },
-            label: {
-                Text("Done")
-                    .font(.system(.title3))
-                    .foregroundColor(Color.white)
-            }
-        )
-        .frame(width: 100, height: 40)
-        .background(Color.green)
-        .cornerRadius(38.5)
-        .shadow(color: Color.black.opacity(0.3),
-                radius: 3,
-                x: 3,
-                y: 3
-        )
-    }
-    
     fileprivate func cancelButton() -> some View {
         return Button(
             action: {
                 newProjectName = ""
-                isNewProjectCellShown = !isNewProjectCellShown
+                isNewProjectCellShown = false
+                isFocusedNewProjectTextField = false
             },
             label: {
                 Text("Cancel")
@@ -63,7 +39,8 @@ struct MainPage: View {
     fileprivate func newProjectButton() -> some View {
         return Button(
             action: {
-                isNewProjectCellShown = !isNewProjectCellShown
+                isNewProjectCellShown = true
+                isFocusedNewProjectTextField = true
             },
             label: {
                 Image(systemName: "plus")
@@ -85,17 +62,13 @@ struct MainPage: View {
             HStack {
                 TextField("Enter name", text: $newProjectName)
                     .focused($isFocusedNewProjectTextField)
-                    .onAppear {
-                        DispatchQueue.main.async {
-                            isFocusedNewProjectTextField = true
-                        }
-                    }
                     .onSubmit {
                         if (!newProjectName.isEmpty) {
                             storage.projects.append(Project(name: newProjectName))
                             newProjectName = ""
                         }
-                        isNewProjectCellShown = !isNewProjectCellShown
+                        isNewProjectCellShown = false
+                        isFocusedNewProjectTextField = false
                     }
             }
         }
@@ -109,8 +82,11 @@ struct MainPage: View {
                         NavigationLink("\(project.name)", destination: TaskListView(project: $project))
                     }
                     .onDelete(perform: deleteProject)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
                     if isNewProjectCellShown {
                         addNewProjectView()
+                            .listRowBackground(Color.clear)
                     }
                 }
                 .navigationTitle("Projects")
@@ -121,12 +97,10 @@ struct MainPage: View {
                         if !isNewProjectCellShown {
                             newProjectButton()
                         } else {
-                            if (!newProjectName.isEmpty) {
-                                doneButton()
-                            }
                             cancelButton()
                         }
-                    }.padding()
+                    }
+                    .padding()
                 }
             }
         }
